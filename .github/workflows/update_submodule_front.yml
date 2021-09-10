@@ -11,12 +11,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with: 
-          submodules: recursive
           token: ${{secrets.STAVE_ACCESS_TOKEN}}
 
       - name: Update submodule
         run: |
-          git submodule update --remote front
+          git submodule update --init --recursive front
       
       - name: Commit
         run: |
