@@ -1,6 +1,9 @@
 [submodule "back"]
 	path = back
 	url = https://github.com/StaveService/back.git
+	branch = main
+
 [submodule "front"]
 	path = front
 	url = https://github.com/StaveService/front.git
+	branch = main
