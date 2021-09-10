@@ -10,4 +10,4 @@ jobs:
     steps:
     - name: Update
       run: |
-        echo "Hello!"
+        echo "Hello! ${{github.event.client_payload.ref}}"
