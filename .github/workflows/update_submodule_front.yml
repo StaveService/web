@@ -8,6 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Update
-      run: |
-        echo "Hello! ${{github.event.client_payload.ref}}"
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+
+      - name: Update
+        run: |
+          echo "Hello!"
