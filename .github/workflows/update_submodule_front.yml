@@ -1,5 +1,4 @@
 name: Update Submodule Front
-
 on:
   repository_dispatch:
     types: [front_update]
