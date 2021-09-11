@@ -1,7 +1,7 @@
-name: Update Submodule Front
+name: Update Submodule Back
 on:
   repository_dispatch:
-    types: [front_update]
+    types: [back_update]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
       - name: Update submodule
         run: |
-          git submodule update --remote front
+          git submodule update --remote back
       
       - name: Commit
         run: |
@@ -24,7 +24,7 @@ jobs:
           git config --local user.email "izszzz@yahoo.co.jp"
           git add -A
           git status
-          git commit -m "update submodule front(by update_submodule_front.yml)"
+          git commit -m "update submodule back(by update_submodule_back.yml)"
 
       - name: Push
         run: |
