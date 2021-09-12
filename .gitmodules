@@ -1,9 +1,9 @@
 [submodule "back"]
 	path = back
-	url = https://github.com/StaveService/back.git
+	url = https://izszzz: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@github.com/StaveService/back.git
 	branch = main
 
 [submodule "front"]
 	path = front
-	url = https://github.com/StaveService/front.git
+	url = https://izszzz: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@github.com/StaveService/front.git
 	branch = main
