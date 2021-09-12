@@ -16,6 +16,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        token: ${{secrets.STAVE_ACCESS_TOKEN}}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@master
