@@ -27,4 +27,5 @@ jobs:
     - name: SSH
       run: |
         gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE
-        ls
+        git pull
+        docker-compose restart
