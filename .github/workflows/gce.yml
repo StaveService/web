@@ -30,4 +30,4 @@ jobs:
 
     - name: SSH
       run: |
-        gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE --command "cd web && git pull && ls && docker-compose down && docker-compose build && docker-compose up -d"
+        gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE --command "pwd && ls && cd web && git pull && ls && docker-compose down && docker-compose build && docker-compose up -d"
