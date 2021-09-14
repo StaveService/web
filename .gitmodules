@@ -6,4 +6,4 @@
 [submodule "front"]
 	path = front
 	url = https://izszzz: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@github.com/StaveService/front.git
-	branch = main
+	branch =  gh-pages
