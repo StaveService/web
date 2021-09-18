@@ -1,9 +1,4 @@
-# db:
-#   image: postgres
-#   volumes:
-#     - ./back/tmp/db:/var/lib/postgresql/data
-#   environment:
-#     POSTGRES_PASSWORD: password
-
-back:
-  command: bash -c "rm -f tmp/pids/server.pid && rm -f tmp/pids/unicorn.pid && bundle exec unicorn -c config/unicorn.rb -E production"
+version: "3"
+services:
+  back:
+    command: bash -c "rm -f tmp/pids/server.pid && rm -f tmp/pids/unicorn.pid && bundle exec unicorn -c config/unicorn.rb -E production"
