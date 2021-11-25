@@ -19,10 +19,23 @@ services:
 
   web:
     image: emarcs/nginx-git
-    ports:
-      - 80:80
     volumes:
       - ./nginx/logs:/var/log/nginx
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/htpasswd:/srv/htpasswd
       - ./back:/back
       - ./front:/front
+    depends_on:
+      - back
+
+  https-portal:
+    image: steveltn/https-portal
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - web
+    environment:
+      DOMAINS: localhost-> http://web:80
+      STAGE: local
+    

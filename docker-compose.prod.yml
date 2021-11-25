@@ -4,3 +4,8 @@ services:
     command: bash -c "rm -f tmp/pids/server.pid && rm -f tmp/pids/unicorn.pid && bundle exec unicorn -c config/unicorn.rb -E production"
     environment:
       - RAILS_ENV=production
+      
+  https-portal:
+    environment:
+      DOMAINS: stave.com-> http://web:80
+      STAGE: production
