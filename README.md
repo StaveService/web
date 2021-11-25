@@ -16,3 +16,41 @@ git clone https://github.com/StaveService/web.git --recursive
 2. [Docker Compose Install](https://docs.docker.com/compose/install/)
 
 3. [Docker non-root user](https://docs.docker.com/engine/install/linux-postinstall/)
+
+   - sudo usermod -aG docker runner (github actions)
+
+4. Git Permission
+
+```sh
+sudo chown -R $USER .git/
+
+sudo chown -R runner .git/
+
+sudo chown -R $USER /home/web
+
+sudo chown -R runner /home/web
+```
+
+5. Make Directory
+
+```sh
+sudo mkdir /home/web/back/tmp/pids
+sudo mkdir /home/web/back/tmp/log
+sudo mkdir /home/web/back/tmp/sockets
+```
+
+6. Set Secret File
+
+   - master.key
+
+7. Create DB
+
+```sh
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:create
+```
+
+8. Up
+
+```sh
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
