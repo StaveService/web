@@ -7,5 +7,5 @@ services:
       
   https-portal:
     environment:
-      DOMAINS: stave.com-> http://web:80
+      DOMAINS: stave-back.com-> http://web:80
       STAGE: production
