@@ -6,8 +6,9 @@ git clone https://github.com/StaveService/web.git --recursive
 
 ## Git Submodules
 
--[back](https://github.com/StaveService/back)
--[front](https://github.com/StaveService/front)
+- [back](https://github.com/StaveService/back)
+
+- [front](https://github.com/StaveService/front)
 
 ## GCE SetUp
 
@@ -28,7 +29,9 @@ sudo gpasswd -a izszzz_iz web
 
 sudo gpasswd -a runner web
 
-chgrp web /home/web
+sudo chgrp web /home/web -R
+
+sudo chmod g+w .git -R
 ```
 
 5. Make Directory
