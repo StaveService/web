@@ -44,6 +44,7 @@ sudo mkdir /home/web/back/tmp/sockets
 6. Set Secret File
 
    - master.key
+   - .env
 
 7. Create DB
 
