@@ -6,8 +6,8 @@ git clone https://github.com/StaveService/web.git --recursive
 
 ## Git Submodules
 
--[back](https://github.com/StaveService/back)
--[front](https://github.com/StaveService/front)
+- [back](https://github.com/StaveService/back)
+- [front](https://github.com/StaveService/front)
 
 ## GCE SetUp
 
@@ -22,13 +22,15 @@ git clone https://github.com/StaveService/web.git --recursive
 4. Git Permission
 
 ```sh
-sudo chown -R $USER .git/
+sudo groupadd web
 
-sudo chown -R runner .git/
+sudo gpasswd -a izszzz_iz web
 
-sudo chown -R $USER /home/web
+sudo gpasswd -a runner web
 
-sudo chown -R runner /home/web
+sudo chgrp web /home/web -R
+
+sudo chmod g+w .git -R
 ```
 
 5. Make Directory
@@ -47,6 +49,8 @@ sudo mkdir /home/web/back/tmp/sockets
 
 ```sh
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:create
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:migrate
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:seed_fu
 ```
 
 8. Up
