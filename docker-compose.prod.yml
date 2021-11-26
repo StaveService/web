@@ -7,7 +7,7 @@ services:
       
   https-portal:
     environment:
-      DOMAINS: stave-back.com -> http://web:80
+      DOMAINS: stave-service.com -> http://web:80
       STAGE: production
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
