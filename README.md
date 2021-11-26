@@ -28,7 +28,7 @@ sudo gpasswd -a izszzz_iz web
 
 sudo gpasswd -a runner web
 
-chgrp web /usr/local/workdir
+chgrp web /home/web
 ```
 
 5. Make Directory
