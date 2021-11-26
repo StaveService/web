@@ -7,7 +7,6 @@ git clone https://github.com/StaveService/web.git --recursive
 ## Git Submodules
 
 - [back](https://github.com/StaveService/back)
-
 - [front](https://github.com/StaveService/front)
 
 ## GCE SetUp
@@ -50,6 +49,8 @@ sudo mkdir /home/web/back/tmp/sockets
 
 ```sh
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:create
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:migrate
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml run back rails db:seed_fu
 ```
 
 8. Up
