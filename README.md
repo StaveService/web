@@ -22,13 +22,13 @@ git clone https://github.com/StaveService/web.git --recursive
 4. Git Permission
 
 ```sh
-sudo chown -R $USER .git/
+sudo groupadd web
 
-sudo chown -R runner .git/
+sudo gpasswd -a izszzz_iz web
 
-sudo chown -R $USER /home/web
+sudo gpasswd -a runner web
 
-sudo chown -R runner /home/web
+chgrp web /usr/local/workdir
 ```
 
 5. Make Directory
